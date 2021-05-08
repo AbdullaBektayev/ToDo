@@ -13,6 +13,9 @@ class Task(models.Model):
     Done = models.BooleanField(default=False)
     PeriodOfTime = models.DateTimeField(default=timezone.now())
 
+    def __str__(self):
+        return str(self.Name)
+
     class Meta:
         verbose_name = 'Task'
         verbose_name_plural = 'Tasks'
