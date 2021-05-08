@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'authemail',
     'ToDoApp',
+    'drf_yasg',
 ]
 
 AUTH_USER_MODEL = 'ToDoApp.User'
