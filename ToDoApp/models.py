@@ -1,11 +1,16 @@
 from django.db import models
 from django.utils import timezone
-from django.conf import settings
+from authemail.models import EmailUserManager, EmailAbstractUser
+from django.contrib.auth import get_user_model
+
+
+class User(EmailAbstractUser):
+    object = EmailUserManager()
 
 
 class Task(models.Model):
     User = models.ForeignKey(
-        to=settings.AUTH_USER_MODEL,
+        to=get_user_model(),
         on_delete=models.CASCADE,
     )
     Name = models.CharField(max_length=100)
