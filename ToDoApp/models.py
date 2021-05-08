@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 
 
 class User(EmailAbstractUser):
-    object = EmailUserManager()
+    objects = EmailUserManager()
 
 
 class Task(models.Model):
