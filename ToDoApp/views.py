@@ -13,14 +13,6 @@ class TaskListViews(APIView):
         serializer = TaskListSerializer(tasks, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-
-class TaskDetailViews(APIView):
-
-    def get(self, request, pk):
-        task = Task.objects.get(pk=pk)
-        serializer = TaskDetailSerializer(task)
-        return Response(serializer.data, status=status.HTTP_200_OK)
-
     def post(self, request):
         serializer = TaskDetailSerializer(data=request.data)
         if serializer.is_valid():
@@ -28,6 +20,14 @@ class TaskDetailViews(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class TaskDetailViews(APIView):
+
+    def get(self, request, pk):
+        task = Task.objects.get(pk=pk)
+        serializer = TaskDetailSerializer(task)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def patch(self, request, pk):
         task_object = Task.objects.get(pk=pk)
