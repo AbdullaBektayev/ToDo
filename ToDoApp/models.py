@@ -1,10 +1,13 @@
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth import get_user_model
+from django.conf import settings
 
 
 class Task(models.Model):
-    User = models.ForeignKey(models=get_user_model())
+    User = models.ForeignKey(
+        to=settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+    )
     Name = models.CharField(max_length=100)
     Description = models.TextField()
     Done = models.BooleanField(default=False)
