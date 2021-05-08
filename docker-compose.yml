@@ -3,6 +3,8 @@ services:
   redis:
     image: redis:6.2.2-alpine
     container_name: rd01
+    env_file:
+      - ./.env.dev
     ports:
       - '6379:6379'
   web:
@@ -24,6 +26,8 @@ services:
     image: postgres:12.0-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env.dev
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=root
@@ -33,6 +37,8 @@ services:
     command: celery -A ToDo worker -B -l info -f celery.logs
     volumes:
       - ./:/usr/src/app/
+    env_file:
+      - ./.env.dev
     depends_on:
       - web
       - db
