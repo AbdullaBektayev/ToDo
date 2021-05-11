@@ -1,6 +1,6 @@
 # ToDo
 
-This Django application is a simple app for to-do notes. You can write, change, delete your todos. And you can do all login stuff like login, logout, reset the password, change password or email, and so on.
+This Django application is a simple app for to-do notes. You can write, change, delete your todos. And you can do all login stuff like login, logout, reset the password, change password or email, and so on (for that I use django-rest-authemail).
 If a task is done the app will send notifications to the email of user. For that you need to configure main mail, I leave the instructions below.
 
 In this project I use Docker to build, Postgres as Database, Redis as a message broker, and Celery as a task queue.
