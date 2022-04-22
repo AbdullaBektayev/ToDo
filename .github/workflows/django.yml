@@ -13,7 +13,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        python-version: [3.9.9]
 
     steps:
     - uses: actions/checkout@v3
@@ -30,5 +30,4 @@ jobs:
         docker-compose up --build -d
     - name: Run Tests
       run: |
-        docker-compose exec web bash
         pytest -vs ToDoApp/test.py
