@@ -30,4 +30,5 @@ jobs:
         docker-compose up --build -d
     - name: Run Tests
       run: |
-        pytest -vs
+        docker-compose exec web bash
+        pytest -vs ToDoApp/test.py

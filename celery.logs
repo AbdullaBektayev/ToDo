@@ -58,3 +58,12 @@
 [2021-05-08 17:03:44,133: INFO/MainProcess] celery@eb105e87968a ready.
 [2021-05-08 17:03:44,545: INFO/Beat] beat: Starting...
 [2021-05-08 17:07:17,421: INFO/MainProcess] beat: Shutting down...
+[2022-04-22 17:55:10,922: INFO/MainProcess] Connected to redis://redis:6379//
+[2022-04-22 17:55:10,928: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-22 17:55:11,804: INFO/Beat] beat: Starting...
+[2022-04-22 17:55:11,944: INFO/MainProcess] mingle: all alone
+[2022-04-22 17:55:11,955: WARNING/MainProcess] /usr/local/lib/python3.7/site-packages/celery/fixups/django.py:204: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  leak, never use this setting in production environments!''')
+
+[2022-04-22 17:55:11,957: INFO/MainProcess] celery@6d9ec97fcb73 ready.
